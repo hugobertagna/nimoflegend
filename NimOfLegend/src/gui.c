@@ -177,6 +177,11 @@ static AppState* app_state_new(int n_squares) {
 
     return s;
 }
+/* Nettoyage */
+static void app_state_free(AppState *s) {
+    if (!s) return;
+    g_free(s);
+}
 int run_gui(void) {
     return run_gui_with_message(NULL);
 }

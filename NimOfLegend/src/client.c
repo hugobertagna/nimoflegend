@@ -5,7 +5,6 @@
 #include <sys/socket.h> // <--- C'est la ligne qui manquait !
 #include "utils.h"
 #include "protocol.h"
-#include "gui.h"
 
 int main() {
     // Connexion locale
@@ -22,9 +21,6 @@ int main() {
         printf("   - Type : %d\n", msg.type);
         printf("   - Texte : %s\n", msg.message);
         printf("   - Nb Pieces : %d\n", msg.board.nb_coins);
-
-        /* Lancer la GUI pour afficher le message et l'état du plateau */
-        run_gui_with_message(&msg);
     } else {
         printf("[CLIENT] Erreur de reception ou deconnexion.\n");
     }
